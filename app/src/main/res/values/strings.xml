@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My City!</string>
+    <string name="EMEA">EMEA</string>
+    <string name="AMER">AMERICAS</string>
+    <string name="ASIA">ASIA</string>
+    <string name="OCEANIA">OCEANIA</string>
+
+    <string name="LONDON"> LONDON </string>
+    <string name="londonMinistry"> Ministry of Sound </string>
+
+</resources>
