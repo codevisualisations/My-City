@@ -19,13 +19,19 @@ class City {
             startDestination = CityScreens.ROOT.name
         ) {
             composable(route = CityScreens.ROOT.name) {
-                CityDisplays().DisplayContinents(
+                CityDisplays().FormCityContinents(
                     navController,
                     uiState
                 )
             }
             composable(route = CityScreens.RECOMMENDATIONS.name){
-                CityDisplays().DisplayCityRecommendations(
+                CityDisplays().FormCityRecommendations(
+                    navController,
+                    uiState
+                )
+            }
+            composable(route = CityScreens.PLACE.name){
+                CityDisplays().FormCityCities(
                     navController,
                     uiState
                 )
@@ -37,7 +43,8 @@ class City {
 
 enum class CityScreens{
     ROOT,
-    RECOMMENDATIONS
+    RECOMMENDATIONS,
+    PLACE
 }
 
 @Preview
