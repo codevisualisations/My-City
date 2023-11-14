@@ -10,48 +10,44 @@
 
     <string name="LONDON">LONDON</string>
     <string name="britishMuseum">The British Museum</string>
-    <string name="britishMuseumDescription">The British Museum is a world-renowned institution showcasing a vast collection of art and artifacts from different cultures.</string>
+    <string name="britishMuseumDescription">Established in 1753, The British Museum is a world-renowned institution located in the heart of London. Founded by Sir Hans Sloane, it originated from his vast collection of curiosities and artifacts. Over the centuries, the museum has expanded significantly, and its diverse exhibits now span over two million years of human history. It played a pivotal role during the Age of Enlightenment and continues to be a symbol of cultural exchange, housing treasures from ancient civilizations like Egypt, Greece, and Mesopotamia.</string>
     <string name="towerOfLondon">Tower of London</string>
-    <string name="towerOfLondonDescription">The Tower of London is a historic castle located on the River Thames, known for its role in British history.</string>
+    <string name="towerOfLondonDescription">Built in 1078 by William the Conqueror, the Tower of London stands as a testament to the rich history of the British monarchy. Initially constructed as a demonstration of Norman power, it later served as a royal residence, prison, and even a menagerie. Notable historical events include the executions of Anne Boleyn and Lady Jane Grey. The tower is a UNESCO World Heritage Site and home to the Crown Jewels, symbolizing centuries of British royalty and political intrigue.</string>
     <string name="buckinghamPalace">Buckingham Palace</string>
-    <string name="buckinghamPalaceDescription">Buckingham Palace, the official residence of the British monarch, is an iconic symbol of the United Kingdom.</string>
-
-
+    <string name="buckinghamPalaceDescription">Constructed in 1703 as Buckingham House, Buckingham Palace became the official royal residence in 1837. It stands as an architectural marvel and a symbol of the British monarchys continuity. The palace witnessed significant events, including Queen Victorias proclamation as Empress of India. Today, it serves as the venue for state occasions and royal ceremonies, embodying the grandeur of the United Kingdoms constitutional monarchy.</string>
 
     <string name="NEW_DELHI">NEW DELHI</string>
     <string name="indiaGate">India Gate</string>
-    <string name="indiaGateDescription">India Gate is a war memorial and an iconic landmark, honoring the soldiers who sacrificed their lives in World War I.</string>
+    <string name="indiaGateDescription">Completed in 1931, India Gate is a war memorial designed by Sir Edwin Lutyens to honor the soldiers who sacrificed their lives in World War I. Originally known as the All India War Memorial, its construction marked the transformation of the Indian capital from Calcutta to Delhi. The Amar Jawan Jyoti, an eternal flame under the arch, symbolizes the sacrifice of Indian soldiers in subsequent wars, making it a poignant national monument.</string>
     <string name="lotusTemple">The Lotus Temple</string>
-    <string name="lotusTempleDescription">The Lotus Temple, with its distinctive lotus-shaped architecture, is a Bahá\'í House of Worship and a symbol of peace.</string>
+    <string name="lotusTempleDescription">Inaugurated in 1986, The Lotus Temple is a Baháí House of Worship known for its distinctive lotus-shaped architecture. It is one of seven such temples worldwide and represents the Baháí Faiths principles of unity and equality. The temple has become a symbol of Indias commitment to religious diversity and harmony, inviting people of all faiths to pray and meditate.</string>
     <string name="qutubMinar">Qutub Minar</string>
-    <string name="qutubMinarDescription">Qutub Minar is a UNESCO World Heritage Site, featuring a towering minaret and historical complex.</string>
+    <string name="qutubMinarDescription">Built in the 12th century, Qutub Minar stands as a masterpiece of Indo-Islamic architecture. Commissioned by Qutb-ud-din Aibak and completed by Iltutmish, it is the worlds tallest brick minaret. The complex also includes the Quwwat-ul-Islam Mosque and the Iron Pillar of Delhi, reflecting the cultural synthesis of Hindu and Islamic traditions during the Delhi Sultanate era.</string>
     <string name="humayunTomb">Humayuns Tomb</string>
-    <string name="humayunTombDescription">Humayun\'s Tomb is a majestic Mughal mausoleum surrounded by lush gardens.</string>
+    <string name="humayunTombDescription">Humayuns Tomb is a majestic Mughal mausoleum commissioned by Empress Bega Begum for her husband, Emperor Humayun, and constructed in the mid-16th century. Designed by Mirak Mirza Ghiyas, it served as an architectural inspiration for the later Taj Mahal. Surrounded by lush gardens, the tomb is a UNESCO World Heritage Site, reflecting the grandeur of Mughal garden-tomb design.</string>
     <string name="redFort">Red Fort</string>
-    <string name="redFortDescription">The Red Fort, a UNESCO World Heritage Site, is an imposing fort complex with significant historical importance.</string>
+    <string name="redFortDescription">The Red Fort, built in the 17th century by Emperor Shah Jahan, stands as a symbol of Mughal power. Originally named the Qila-i-Mubarak, it served as the main residence of the Mughal emperors for over 200 years. The fort witnessed the proclamation of Indian independence in 1947 and is now a UNESCO World Heritage Site, preserving Mughal architectural brilliance and historical significance.</string>
     <string name="chandniChowk">Chandni Chowk:</string>
-    <string name="chandniChowkDescription">Chandni Chowk is a bustling market in Old Delhi, offering a glimpse into the city\'s vibrant street life and culture.</string>
+    <string name="chandniChowkDescription">Chandni Chowk is a bustling market in Old Delhi, offering a glimpse into the citys vibrant street life and culture. Established in the 17th century by Mughal Emperor Shah Jahan, it remains a bustling center of commerce and a testament to Delhis historical and cultural richness.</string>
     <string name="akshardhamTemple">Akshardham Temple</string>
-    <string name="akshardhamTempleDescription">Akshardham Temple is a stunning Hindu temple complex known for its intricate architecture and spiritual significance.</string>
+    <string name="akshardhamTempleDescription">Akshardham Temple is a stunning Hindu temple complex known for its intricate architecture and spiritual significance. Inaugurated in 2005, it celebrates Indian art, culture, and spirituality, showcasing the countrys rich heritage in a modern architectural setting.</string>
     <string name="handloomMuseum">National Handicrafts and Handlooms Museum</string>
-    <string name="handloomMuseumDescription">National Handicrafts and Handlooms Museum showcases the rich cultural heritage of India through traditional crafts and textiles.</string>
+    <string name="handloomMuseumDescription">National Handicrafts and Handlooms Museum showcases the rich cultural heritage of India through traditional crafts and textiles. Established in 1956, it provides a comprehensive overview of Indias diverse handicraft traditions, preserving and promoting the countrys artistic heritage.</string>
 
     <string name="NEW_YORK">New York</string>
     <string name="centralPark">Central Park</string>
-    <string name="centralParkDescription">Central Park is a vast urban park in the heart of Manhattan, offering a peaceful escape and recreational activities.</string>
+    <string name="centralParkDescription">Central Park is a vast urban park in the heart of Manhattan, designed by Frederick Law Olmsted and Calvert Vaux in the mid-19th century. Created during the citys rapid expansion, the park reflects the ideals of the Romantic movement and has become a haven for New Yorkers seeking refuge from urban life. Iconic features such as Bethesda Terrace and the Great Lawn have witnessed countless historical events and cultural milestones.</string>
     <string name="timesSquare">Times Square</string>
-    <string name="timesSquareDescription">Times Square is a bustling commercial and entertainment hub, famous for its vibrant lights and Broadway theaters.</string>
+    <string name="timesSquareDescription">Times Square is a bustling commercial and entertainment hub, transformed in 1904 with the relocation of The New York Times headquarters. Synonymous with the energy and vibrancy of New York City, it is adorned with dazzling lights and billboards. The iconic New Years Eve ball drop at Times Square has become a global symbol of celebration, marking the transition to a new year.</string>
     <string name="statueOfLiberty">Statue of Liberty</string>
-    <string name="statueOfLibertyDescription">The Statue of Liberty is an iconic symbol of freedom and democracy, welcoming visitors to New York Harbor.</string>
-
-
+    <string name="statueOfLibertyDescription">The Statue of Liberty, dedicated in 1886 as a gift from France to the United States, is a universal symbol of freedom and democracy. Designed by Frédéric Auguste Bartholdi, the statue represents Libertas, the Roman goddess of freedom. Standing at the entrance of New York Harbor, it welcomed millions of immigrants arriving in America, embodying notions of hope and opportunity.</string>
 
     <string name="SYDNEY">SYDNEY</string>
     <string name="sydneyOperaHouse">The Sydney Opera House</string>
-    <string name="sydneyOperaHouseDescription">The Sydney Opera House is an architectural marvel and a world-renowned performing arts venue.</string>
+    <string name="sydneyOperaHouseDescription">The Sydney Opera House, designed by Jørn Utzon and opened in 1973, is an architectural marvel and a world-renowned performing arts venue. Its unique sail-like structures make it an iconic symbol of Sydney and a testament to modernist design and engineering excellence.</string>
     <string name="tarongaZoo">Taronga Zoo</string>
-    <string name="tarongaZooDescription">Taronga Zoo is a popular wildlife attraction with breathtaking views of Sydney Harbor and a diverse range of animals.</string>
+    <string name="tarongaZooDescription">Taronga Zoo, established in 1916, is a popular wildlife attraction with breathtaking views of Sydney Harbor. Committed to conservation, education, and research, the zoo provides visitors with the opportunity to connect with a diverse range of animals while enjoying the beauty of the harbor and the Sydney skyline.</string>
     <string name="royalBotanicGarden">Royal Botanic Garden</string>
-    <string name="royalBotanicGardenDescription">The Royal Botanic Garden is a tranquil oasis in the heart of Sydney, showcasing a vast collection of plants from around the world.</string>
+    <string name="royalBotanicGardenDescription">The Royal Botanic Garden, founded in 1816, is a tranquil oasis in the heart of Sydney. Originally established for scientific research, the garden now serves as a peaceful retreat for locals and tourists alike. Its extensive collection of plants showcases the biodiversity of flora from around the world, contributing to Sydneys reputation as a city that values and preserves natural beauty.</string>
 
 </resources>
