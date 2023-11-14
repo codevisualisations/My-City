@@ -2,7 +2,7 @@
 
 A travel app displaying key attractions from every continent! Works with expanded screen sizes on tablets.
 
-Simply build the gradle project and have a look! :)
+Simply build the project with gradle and have a look! :)
 
 <p align="center">
   <img width="976" alt="Screenshot 2023-11-14 at 19 24 03" src="https://github.com/codevisualisations/myCity/assets/106033128/b2e34a26-a751-48cc-bcea-e3cf6921cefa">
