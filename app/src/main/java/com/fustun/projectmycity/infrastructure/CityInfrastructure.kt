@@ -1,8 +1,6 @@
 package com.fustun.projectmycity.infrastructure
 
-import android.widget.Button
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -24,13 +22,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.fustun.projectmycity.R
 import com.fustun.projectmycity.ui.theme.CityViewModel
-import com.fustun.projectmycity.ui.theme.ProjectMyCityTheme
 
 class CityInfrastructure {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -42,7 +38,7 @@ class CityInfrastructure {
                     verticalAlignment = Alignment.CenterVertically
                 ){
                     Image(
-                        painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                        painter = painterResource(id = R.drawable.new_app_logo),
                         contentDescription =null,
                         modifier = modifier.size(dimensionResource(id = R.dimen.paddingLargest))
                     )

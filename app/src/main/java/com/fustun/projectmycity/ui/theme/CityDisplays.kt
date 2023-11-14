@@ -1,17 +1,15 @@
 package com.fustun.projectmycity.ui.theme
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+
 
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -26,12 +24,15 @@ import com.fustun.projectmycity.infrastructure.CityCards
 import com.fustun.projectmycity.infrastructure.CityInfrastructure
 import com.fustun.projectmycity.models.CityModels
 import com.fustun.projectmycity.myCity.CityScreens
+import com.fustun.projectmycity.utils.CityContentType
 
 
 class CityDisplays {
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun DisplayContinentsAndRecommendations(
+        currentExpandedAttractionCard : CityModels.Attractions,
+        contentType: CityContentType,
         navController: NavController,
         uiState: CityViewModel,
         items: List<CityModels>,
@@ -49,44 +50,57 @@ class CityDisplays {
                 )
             }
         ) { innerPadding ->
-            Column(modifier = modifier.padding(innerPadding)){
-                LazyColumn(
-                    modifier = modifier.weight(0.9f),
-                    verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall))
-                ) {
-                    items(items) { item ->
-                        when (item) {
-                            is CityModels.Continent -> {
-                                CityCards().ContinentOrCityCard(
-                                    cat = item,
-                                    onClick = {
-                                        uiState.updateRecommendationsList(title = item.name)
-                                        uiState.updateTopBarTitle(title = item.name)
-                                        navController.navigate(CityScreens.RECOMMENDATIONS.name)
-                                    }
-                                )
+            if (contentType == CityContentType.ListOnly){
+                Column(modifier = modifier.padding(innerPadding)){
+                    LazyColumn(
+                        modifier = modifier.weight(0.9f),
+                        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall))
+                    ) {
+                        items(items) { item ->
+                            when (item) {
+                                is CityModels.Continent -> {
+                                    CityCards().CityOrAttractionCard(
+                                        cat = item,
+                                        onClick = {
+                                            uiState.updateRecommendationsList(title = item.name)
+                                            uiState.updateTopBarTitle(title = item.name)
+                                            uiState.updateExpandedAttractionCard(title = item.name)
+                                            navController.navigate(CityScreens.RECOMMENDATIONS.name)
+                                        }
+                                    )
+                                }
+                                is CityModels.Cities -> {
+                                    CityCards().CityOrAttractionCard(
+                                        cat = item,
+                                        onClick = {
+                                            uiState.updateCurrentAttraction(title = item.name)
+                                            uiState.updatePreviousTopBarTitle(title = topBarTitle)
+                                            uiState.updateTopBarTitle(title = item.name)
+                                            navController.navigate(CityScreens.PLACE.name)
+                                        }
+                                    )
+                                }
+                                else -> {}
                             }
-                            is CityModels.Cities -> {
-                                CityCards().ContinentOrCityCard(
-                                    cat = item,
-                                    onClick = {
-                                        uiState.updateCurrentAttraction(title = item.name)
-                                        uiState.updatePreviousTopBarTitle(title = topBarTitle)
-                                        uiState.updateTopBarTitle(title = item.name)
-                                        navController.navigate(CityScreens.PLACE.name)
-                                    }
-                                )
-                            }
-                            else -> {}
                         }
                     }
+                    if (topBarCanNavigateBack){
+                        CityInfrastructure().CityCancelButton(
+                            onCancelButtonClicked = {navController.popBackStack(CityScreens.ROOT.name,inclusive = false)},
+                            modifier = modifier.weight(0.1f)
+                        )
+                    }
                 }
-                if (topBarCanNavigateBack){
-                    CityInfrastructure().CityCancelButton(
-                        onCancelButtonClicked = {navController.popBackStack(CityScreens.ROOT.name,inclusive = false)},
-                        modifier = modifier.weight(0.1f)
-                    )
-                }
+            }else{
+                CityCards().CityAndAttractionCard(
+                    uiState = uiState,
+                    navController = navController,
+                    topBarTitle = topBarTitle,
+                    cardList = items,
+                    card = currentExpandedAttractionCard,
+                    topBarCanNavigateBack,
+                    modifier = modifier.padding(innerPadding)
+                )
             }
         }
     }
@@ -123,7 +137,7 @@ class CityDisplays {
                         .fillMaxSize(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ){
-                    CityCards().CityCityCard(currentCity)
+                    CityCards().AttractionCard(currentCity)
                 }
                 CityInfrastructure().CityCancelButton(
                     onCancelButtonClicked = {navController.popBackStack(CityScreens.ROOT.name,inclusive = false)},
@@ -135,28 +149,32 @@ class CityDisplays {
         }
     }
 
+
+
     @Composable
-    fun FormCityContinents(navController: NavController, uiState: CityViewModel, modifier: Modifier = Modifier) {
+    fun FormCityContinents(contentType : CityContentType, navController: NavController, uiState: CityViewModel, modifier: Modifier = Modifier) {
         val currentUiState by uiState.cityUiState.collectAsState()
 
+        val currentExpandedAttractionCard = currentUiState.currentExpandedAttractionCard
         val continents = currentUiState.cityContinentsList
         val topBarTitle = R.string.app_name
         val topBarCanNavigateBack = navController.previousBackStackEntry != null
-        DisplayContinentsAndRecommendations(navController, uiState, continents, topBarTitle, topBarCanNavigateBack, modifier)
+        DisplayContinentsAndRecommendations(currentExpandedAttractionCard,contentType,navController, uiState, continents, topBarTitle, topBarCanNavigateBack, modifier)
     }
 
     @Composable
-    fun FormCityRecommendations(navController: NavController, uiState: CityViewModel, modifier:Modifier=Modifier){
+    fun FormCityRecommendations(contentType : CityContentType,navController: NavController, uiState: CityViewModel, modifier:Modifier=Modifier){
         val currentUiState by uiState.cityUiState.collectAsState()
 
+        val currentExpandedAttractionCard = currentUiState.currentExpandedAttractionCard
         val currentCityRecommendations = currentUiState.cityRecommendationsList
         val currentCityTopBarTitle = currentUiState.topBarTitle
         val topBarCanNavigateBack = navController.previousBackStackEntry != null
-        DisplayContinentsAndRecommendations(navController, uiState, currentCityRecommendations, currentCityTopBarTitle, topBarCanNavigateBack, modifier)
+        DisplayContinentsAndRecommendations(currentExpandedAttractionCard,contentType,navController, uiState, currentCityRecommendations, currentCityTopBarTitle, topBarCanNavigateBack, modifier)
     }
 
     @Composable
-    fun FormCityCities(navController: NavController, uiState: CityViewModel){
+    fun FormCityCities(contentType : CityContentType, navController: NavController, uiState: CityViewModel){
         val currentUiState by uiState.cityUiState.collectAsState()
 
         val currentCityAttraction = currentUiState.cityAttraction

@@ -5,6 +5,7 @@ import com.fustun.projectmycity.models.CityModels
 
 object CityCategories {
     val attractionsMap: HashMap<Int, CityModels.Attractions> = hashMapOf(
+        R.string.app_name to CityModels.Attractions(R.string.app_name,R.string.welcome,R.drawable.new_app_logo),
         R.string.britishMuseum to CityModels.Attractions(R.string.britishMuseum, R.string.britishMuseumDescription, R.drawable.britishmuseum_jpg),
         R.string.towerOfLondon to CityModels.Attractions(R.string.towerOfLondon, R.string.towerOfLondonDescription, R.drawable.toweroflondon),
         R.string.buckinghamPalace to CityModels.Attractions(R.string.buckinghamPalace, R.string.buckinghamPalaceDescription, R.drawable.buckinghampalace),
@@ -71,6 +72,6 @@ object CityCategories {
     }
 
     fun getCityAttraction(description: Int): CityModels.Attractions {
-        return attractionsMap[description] ?: CityModels.Attractions(R.string.redFort, R.string.redFortDescription, R.drawable.asia)
+        return attractionsMap[description] ?: CityModels.Attractions(R.string.app_name, R.string.welcome, R.drawable.new_app_logo)
     }
 }

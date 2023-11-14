@@ -8,4 +8,5 @@ data class CityUiState(
     val cityRecommendationsList : List<CityModels.Cities> = CityCategories.getCityRecommendationsLondon(),
     val cityContinentsList : List<CityModels.Continent> = CityCategories.getCityContinents(),
     val cityAttraction : CityModels.Attractions = CityCategories.getCityAttraction(R.string.britishMuseum),
+    val currentExpandedAttractionCard : CityModels.Attractions = CityCategories.getCityAttraction(R.string.britishMuseum),
 )

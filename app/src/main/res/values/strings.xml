@@ -2,11 +2,12 @@
     <string name="app_name">My City!</string>
     <string name="back_button">Back</string>
     <string name="cancel">Start Over</string>
+    <string name="welcome">Click a tab to get started!</string>
 
-    <string name="EMEA">EMEA</string>
-    <string name="AMER">AMERICAS</string>
-    <string name="ASIA">ASIA</string>
-    <string name="OCEANIA">OCEANIA</string>
+    <string name="EMEA">LONDON</string>
+    <string name="AMER">NEW YORK</string>
+    <string name="ASIA">NEW DELHI</string>
+    <string name="OCEANIA">SYDNEY</string>
 
     <string name="LONDON">LONDON</string>
     <string name="britishMuseum">The British Museum</string>

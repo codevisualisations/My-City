@@ -60,4 +60,12 @@ class CityViewModel : ViewModel() {
             )
         }
     }
+
+    fun updateExpandedAttractionCard(title : Int ){
+        _CityUiState.update {
+            it.copy(
+                currentExpandedAttractionCard = CityCategories.getCityAttraction(title)
+            )
+        }
+    }
 }
