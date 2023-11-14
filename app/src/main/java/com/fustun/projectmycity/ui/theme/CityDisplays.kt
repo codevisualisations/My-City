@@ -98,7 +98,7 @@ class CityDisplays {
                     topBarTitle = topBarTitle,
                     cardList = items,
                     card = currentExpandedAttractionCard,
-                    topBarCanNavigateBack,
+                    topBarCanNavigateBack = topBarCanNavigateBack,
                     modifier = modifier.padding(innerPadding)
                 )
             }

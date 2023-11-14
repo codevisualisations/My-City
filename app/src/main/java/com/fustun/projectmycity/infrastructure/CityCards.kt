@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 
 import androidx.compose.foundation.layout.Row
 
+
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -133,52 +134,65 @@ class CityCards {
         modifier: Modifier=Modifier)
     {
         val isCityRecommendations = cardList.firstOrNull() is CityModels.Cities
-        Row{
-            LazyColumn(
-                modifier = modifier
-                    .weight(2f)
-                    .padding(dimensionResource(id = R.dimen.paddingMedium)),
-                verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall))
-            ) {
-                items(cardList) { item ->
-                    when (item) {
-                        is CityModels.Continent -> {
-                            CityCards().CityOrAttractionCard(
-                                cat = item,
-                                onClick = {
-                                    uiState.updateRecommendationsList(title = item.name)
-                                    uiState.updateTopBarTitle(title = item.name)
-                                    uiState.updateExpandedAttractionCard(title = item.name)
-                                    navController.navigate(CityScreens.RECOMMENDATIONS.name)
-                                }
-                            )
+        Column{
+            Row(
+                modifier = Modifier.weight(0.9f)
+                .fillMaxWidth()
+            ){
+                LazyColumn(
+                    modifier = modifier
+                        .weight(2f)
+                        .padding(dimensionResource(id = R.dimen.paddingMedium)),
+                    verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall))
+                ) {
+                    items(cardList) { item ->
+                        when (item) {
+                            is CityModels.Continent -> {
+                                CityCards().CityOrAttractionCard(
+                                    cat = item,
+                                    onClick = {
+                                        uiState.updateRecommendationsList(title = item.name)
+                                        uiState.updateTopBarTitle(title = item.name)
+                                        uiState.updateExpandedAttractionCard(title = item.name)
+                                        navController.navigate(CityScreens.RECOMMENDATIONS.name)
+                                    }
+                                )
+                            }
+                            is CityModels.Cities -> {
+                                CityCards().CityOrAttractionCard(
+                                    cat = item,
+                                    onClick = {
+                                        uiState.updateCurrentAttraction(title = item.name)
+                                        uiState.updatePreviousTopBarTitle(title = topBarTitle)
+                                        uiState.updateTopBarTitle(title = item.name)
+                                        uiState.updateExpandedAttractionCard(title = item.name)
+                                    }
+                                )
+                            }
+                            else -> {}
                         }
-                        is CityModels.Cities -> {
-                            CityCards().CityOrAttractionCard(
-                                cat = item,
-                                onClick = {
-                                    uiState.updateCurrentAttraction(title = item.name)
-                                    uiState.updatePreviousTopBarTitle(title = topBarTitle)
-                                    uiState.updateTopBarTitle(title = item.name)
-                                    uiState.updateExpandedAttractionCard(title = item.name)
-                                }
-                            )
-                        }
-                        else -> {}
                     }
                 }
-            }
-            Spacer(modifier = modifier.padding(dimensionResource(id = R.dimen.paddingSmall)))
-            if (isCityRecommendations && card.name != R.string.app_name){
-                Column(modifier = modifier.weight(3f)){
-                    AttractionCard(
-                        cat = card)
+                Spacer(modifier = modifier.padding(dimensionResource(id = R.dimen.paddingSmall)))
+                if (isCityRecommendations && card.name != R.string.app_name){
+                    Column(modifier = modifier.weight(3f)){
+                        AttractionCard(
+                            cat = card)
+                    }
+                }else{
+                    Column(modifier = modifier.weight(2f)){
+                        MyCityLogoCard()
+                    }
                 }
-            }else{
-                Column(modifier = modifier.weight(2f)){
-                    MyCityLogoCard()
-                }
-            }
+        }
+            if (topBarCanNavigateBack){
+                CityInfrastructure().CityCancelButton(
+                    modifier = Modifier
+                        .weight(0.1f)
+                        .fillMaxWidth(),
+                    onCancelButtonClicked = {navController.popBackStack(CityScreens.ROOT.name,inclusive = false)},
+                )
+        }
         }
     }
 }
