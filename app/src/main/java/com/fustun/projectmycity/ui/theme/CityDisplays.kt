@@ -174,7 +174,7 @@ class CityDisplays {
     }
 
     @Composable
-    fun FormCityCities(contentType : CityContentType, navController: NavController, uiState: CityViewModel){
+    fun FormCityCities(navController: NavController, uiState: CityViewModel){
         val currentUiState by uiState.cityUiState.collectAsState()
 
         val currentCityAttraction = currentUiState.cityAttraction

@@ -41,7 +41,6 @@ class City {
             }
             composable(route = CityScreens.PLACE.name){
                 CityDisplays().FormCityCities(
-                    contentType = contentType,
                     navController,
                     uiState
                 )
