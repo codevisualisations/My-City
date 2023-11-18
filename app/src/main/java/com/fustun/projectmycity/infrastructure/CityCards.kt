@@ -89,7 +89,7 @@ class CityCards {
                 Image(
                     painter = painterResource(id = cat.image),
                     contentDescription = null,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize().testTag("tagImage")
                 )
                 Spacer(modifier = modifier.padding(top = dimensionResource(id = R.dimen.paddingLarge)))
                 Text(

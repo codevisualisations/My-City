@@ -49,7 +49,7 @@ class CityInfrastructure {
             },
             navigationIcon = {
                 if (topBarCanNavigateUp){
-                    IconButton(onClick = navigateUp) {
+                    IconButton(onClick = navigateUp, modifier=modifier.testTag("backButton")) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = stringResource(id = R.string.back_button)
