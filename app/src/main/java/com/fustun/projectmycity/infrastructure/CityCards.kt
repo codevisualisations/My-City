@@ -26,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -142,8 +143,10 @@ class CityCards {
                 LazyColumn(
                     modifier = modifier
                         .weight(2f)
-                        .padding(dimensionResource(id = R.dimen.paddingMedium)),
-                    verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall))
+                        .padding(dimensionResource(id = R.dimen.paddingMedium))
+                        .testTag("LazyColumnCityAndAttractionCard"),
+                    verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall)
+                    )
                 ) {
                     items(cardList) { item ->
                         when (item) {
@@ -181,7 +184,7 @@ class CityCards {
                     }
                 }else{
                     Column(modifier = modifier.weight(2f)){
-                        MyCityLogoCard()
+                        MyCityLogoCard(modifier.testTag("expandedMyCityLogoCard"))
                     }
                 }
         }

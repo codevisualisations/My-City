@@ -17,6 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.dimensionResource
 import androidx.navigation.NavController
 import com.fustun.projectmycity.R
@@ -53,7 +54,7 @@ class CityDisplays {
             if (contentType == CityContentType.ListOnly){
                 Column(modifier = modifier.padding(innerPadding)){
                     LazyColumn(
-                        modifier = modifier.weight(0.9f),
+                        modifier = Modifier.weight(0.9f),
                         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.paddingSmall))
                     ) {
                         items(items) { item ->
@@ -66,7 +67,8 @@ class CityDisplays {
                                             uiState.updateTopBarTitle(title = item.name)
                                             uiState.updateExpandedAttractionCard(title = item.name)
                                             navController.navigate(CityScreens.RECOMMENDATIONS.name)
-                                        }
+                                        },
+                                        modifier = Modifier.testTag("continentItem_${item.name}")
                                     )
                                 }
                                 is CityModels.Cities -> {
